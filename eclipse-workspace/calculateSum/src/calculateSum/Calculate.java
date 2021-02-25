@@ -3,14 +3,18 @@ package calculateSum;
 public class Calculate {
 	public int calculate(String input) throws Exception {
 		
-		
+		String[] numArray = input.split(",");
 		if(isEmpty(input))
 		{
 			return 0; // returns 0 if input string is empty
 		}
-		else
+		else if(numArray.length==1)
 		{
 			return stringToInt(input); // returns the number if only one input is provided
+		}
+		else
+		{
+			return sumOfNum(numArray);
 		}
 	}
 	
@@ -24,5 +28,11 @@ public class Calculate {
 	private int stringToInt(String input)
 	{
 		return Integer.parseInt(input);
+	}
+	
+	// return sum of two num separated by ","
+	private int sumOfNum(String[] number)
+	{
+		return stringToInt(number[0])+stringToInt(number[1]);
 	}
 }

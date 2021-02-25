@@ -30,4 +30,9 @@ private Calculate cal;
 	{
 		assertEquals(cal.calculate("1"),1);
 	}
+	// method to check if string has two positive int value separated by "," and returned sum is correct
+		public void twoNumber() throws Exception
+		{
+			assertEquals(cal.calculate("1,2"),3);
+		}
 }
