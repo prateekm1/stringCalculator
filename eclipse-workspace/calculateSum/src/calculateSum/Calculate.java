@@ -3,7 +3,7 @@ package calculateSum;
 public class Calculate {
 	public int calculate(String input) throws Exception {
 		
-		String[] numArray = input.split(",");
+		String[] numArray = input.split(",|\n");
 		if(isEmpty(input))
 		{
 			return 0; // returns 0 if input string is empty
@@ -30,7 +30,7 @@ public class Calculate {
 		return Integer.parseInt(input);
 	}
 	
-	// return sum of two num separated by ","
+	// return sum of two num separated by "," or "\n"
 	private int sumOfNum(String[] number)
 	{
 		return stringToInt(number[0])+stringToInt(number[1]);

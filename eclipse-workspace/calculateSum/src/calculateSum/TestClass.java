@@ -35,4 +35,9 @@ private Calculate cal;
 		{
 			assertEquals(cal.calculate("1,2"),3);
 		}
+	// method to check if string has two positive int value separated by "\n" and returned sum is correct
+		public void twoNumberNextLine() throws Exception
+		{
+			assertEquals(cal.calculate("2\n3"),5);
+		}
 }
