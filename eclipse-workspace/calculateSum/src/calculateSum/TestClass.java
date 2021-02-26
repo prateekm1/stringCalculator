@@ -52,6 +52,10 @@ private Calculate cal;
 		{
 			cal.calculate("-1");
 		}
-		
+	// method to test if input is greater than 1000
+		public void numberMoreThan1000() throws Exception
+		{
+			assertEquals(cal.calculate("10,10,1001"),20);
+		}	
 	
 }
