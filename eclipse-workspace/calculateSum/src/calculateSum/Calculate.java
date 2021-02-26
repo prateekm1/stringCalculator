@@ -6,11 +6,11 @@ public class Calculate {
 		
 		if(isEmpty(input))
 		{
-			return 0;
+			return 0; //return 0 if input string is empty
 		}
 		if(input.length()==1)
 		{
-			return stringToInt(input);
+			return stringToInt(input); // returns the number if only one input is provided
 		}
 		else
 		{
@@ -30,9 +30,9 @@ public class Calculate {
 	private int calculateValue(String[] number)
 	{
 		int sum=0;
-		for(int index=0; index< number.length; index++)
+		for(String current:number)
 		{
-			sum +=  stringToInt(number[index]);
+			sum +=  stringToInt(current);
 		}
 		return sum;
 	}
