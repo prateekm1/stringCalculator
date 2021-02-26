@@ -40,9 +40,9 @@ public class Calculate {
 	// throw exception for negative input
 	private void invalidInput(String[] number) throws Exception
 	{
-		for(int index=0; index< number.length; index++)
+		for(String current:number)
 		{
-			if(stringToInt(number[index])<0)
+			if(stringToInt(current)<0)
 			{
 				throw new Exception("negative number");
 			}
