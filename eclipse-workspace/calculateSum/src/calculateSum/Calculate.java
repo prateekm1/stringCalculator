@@ -32,6 +32,10 @@ public class Calculate {
 		int sum=0;
 		for(String current:number)
 		{
+			if(stringToInt(current)>1000)
+			{
+				continue;
+			}
 			sum +=  stringToInt(current);
 		}
 		return sum;
