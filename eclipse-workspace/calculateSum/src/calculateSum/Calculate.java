@@ -2,19 +2,50 @@ package calculateSum;
 
 public class Calculate {
 	public int calculate(String input) throws Exception {
-		
 		String[] numArray = input.split(",|\n");
+		
 		if(isEmpty(input))
 		{
-			return 0; // returns 0 if input string is empty
+			return 0;
 		}
-		else if(numArray.length==1)
+		if(input.length()==1)
 		{
-			return stringToInt(input); // returns the number if only one input is provided
+			return stringToInt(input);
 		}
 		else
 		{
-			return sumOfNum(numArray);
+			return getSum(numArray);
+		}
+	}
+	
+	// to get sum of two positive number
+	private int getSum(String[] number) throws Exception
+	{
+		invalidInput(number);
+		
+		return calculateValue(number);
+	}
+	
+	// calculate the sum of inputs
+	private int calculateValue(String[] number)
+	{
+		int sum=0;
+		for(int index=0; index< number.length; index++)
+		{
+			sum +=  stringToInt(number[index]);
+		}
+		return sum;
+	}
+	
+	// throw exception for negative input
+	private void invalidInput(String[] number) throws Exception
+	{
+		for(int index=0; index< number.length; index++)
+		{
+			if(stringToInt(number[index])<0)
+			{
+				throw new Exception("negative number");
+			}
 		}
 	}
 	
@@ -30,9 +61,4 @@ public class Calculate {
 		return Integer.parseInt(input);
 	}
 	
-	// return sum of two num separated by "," or "\n"
-	private int sumOfNum(String[] number)
-	{
-		return stringToInt(number[0])+stringToInt(number[1]);
-	}
 }

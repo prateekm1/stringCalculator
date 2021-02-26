@@ -40,4 +40,18 @@ private Calculate cal;
 		{
 			assertEquals(cal.calculate("2\n3"),5);
 		}
+	// method to check if string has three positive int value separated by "," and returned sum is correct
+		public void threeNumberSum() throws Exception
+		{
+			assertEquals(cal.calculate("1,2,3"),6);
+		}
+		
+	// method to throw exception for negative numbers
+		@Test(expectedExceptions = Exception.class)
+		public void exceptionInput() throws Exception
+		{
+			cal.calculate("-1");
+		}
+		
+	
 }
